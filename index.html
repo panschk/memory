@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="memory" ng-controller="Main as m">
+  <head>
+	<meta charset="utf-8"/>
+	<script src="jquery-3.1.1.min.js"></script>
+    <script src="angular.min.js"></script>
+	<script src="data.js" charset="utf-8"></script>
+	<script src="memory.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+  </head>
+  <body>
+  <div id="menu"  ng-show="m.isactive=='menu'" ng-cloak>
+		<select ng-model="m.count" ng-options="item for item in [2,4,6,8,10,12,16,20,24,30,36,42,60]"></select>Paare
+		<button ng-click="m.startMemory(m.count)">Spielen!</button>
+	
+  </div>
+   
+	<div ng-show="m.isactive=='memory'" id="memory" ng-cloak>
+	  <button ng-click="m.mainMenu()">Zurück</button>
+	  <br />
+	   <button ng-repeat="card in game.cards track by $index" ng-class="'card_'+card.class" ng-disabled="card.class!='hidden'" ng-click="game.turn($index)">
+		<span>&nbsp;</span><span class = "cardtext"><span ng-class="card.lang">{{card['value']}}</span></span>
+	   </button>
+	</div>
+
+  </body>
+</html>
