@@ -1,16 +1,1 @@
-var data = 
-{
-'numbers' 	: {
-	'name'	: "Zahlen 1-10",
-	'nameMg': "Isa 1-10",
-	'de' 	: ["eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn"],
-	'mg' 	: ["iray", "roa", "telo", "efatra", "dimy", "enina", "fito", "valo", "sivy", "folo"]
-},
-'colors'	: {
-	'name'	: "Farben",
-	'nameMg': "Loko",
-	'de'	: ["rot", "grün", "blau", "gelb", "weiß", "schwarz", "braun", "rosa"],
-	'mg'	: ["mena", "maintso", "manga", "mavo", "fotsy", "mainty", "volon-tany", "mavokely"]
-}
-
-}
+var data = ["accesory-1.png","accesory-4.png","airplane.png","apple.png","armchair.png","backpack.png","basketball.png","boards.png","boat.png","books.png","box.png","bus.png","calculator-1.png","car.png","cat.png","chemistry.png","clock.png","computer.png","cow.png","cup.png","cycling.png","dog.png","earth-globe-1.png","eyeglasses.png","footwear.png","frog.png","koala.png","ladybug.png","lion.png","magician.png","microscope.png","pen.png","pencil.png","pig.png","raccoon.png","science.png","scissors.png","search.png","smartphone.png","spanish-guitar.png","target.png","telescope.png","train-2.png","ufo.png","wasp.png"]
