@@ -2,16 +2,28 @@
 <html ng-app="memory" ng-controller="Main as m">
   <head>
 	<meta charset="utf-8"/>
+	<script src="lockr.js"></script>
 	<script src="jquery-3.1.1.min.js"></script>
     <script src="angular.min.js"></script>
 	<script src="data.js" charset="utf-8"></script>
-	<script src="memory.js" charset="utf-8"></script>
+	<script src="elefantbrain.js" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
   </head>
   <body>
   <div id="menu" ng-show="m.isactive=='menu'" ng-cloak>
 		<select ng-model="m.count" ng-options="item for item in [2,4,6,8,10,12,16,20,24,30,36,42]"></select>Paare
 		<button ng-click="m.startMemory()">Spielen!</button>
+
+		<div id = "highscorelist" >
+			<div><b>Bestenliste</b></div>
+			<div ng-repeat="(key, value) in globalScope.highscoreList track by $index" class="highscore">
+			<b><u>{{key}} Paare</u></b>
+				<span ng-repeat="val in value track by $index" >
+					<b>{{val.name}}</b>:  {{val.turns}}
+				</span>
+			</div>
+		
+		</div>
 	
   </div>
 	<div ng-show="m.isactive=='memory'" id="memory" ng-cloak>
