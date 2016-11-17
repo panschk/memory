@@ -127,30 +127,29 @@ h1 {
 	float: left;
 	min-height: 1vh;
 	min-width: 1vw;
+	opacity:1;
 }
 
 .card_shown  img, .card_hidden  img, .card_done  img {
-
 	padding:0;
 	margin:0;
 	border:0;
-	
 }
 .card_hidden {
 	background-color:#bbbbbb;
-	background: linear-gradient(to bottom right, #ffffff, #bbbbbb)
+	background: linear-gradient(to bottom right, #ffffff, #bbbbbb);
 }
 .card_done{
 	background-color:#dddddd;
+	opacity:0;
 	visibility:hidden;
+	transition:1.5s;
+
 }
 .card_hidden .cardtext {
 	display:none;
 }
-.card_shown .cardtext {
-	font-weight: bold;
-	color:black;
-}
+
 .highscore {
 	font-size: 2vw;
 }
@@ -159,3 +158,4 @@ h1 {
     bottom:0;
 	font-size:8pt;
 }
+
