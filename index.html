@@ -17,8 +17,9 @@
 <div id = "wrapper">
   <div id="menu" ng-show="m.isactive=='menu'" ng-cloak>
 	<img src="img/elephant.png" id = "icon" ></img>
-	<span id="title">Elephant Brain</span>
+	<h1>Elephant Brain</h1>
 	<br />
+	<button><img src="img/settings.png"/></button>
 	<select ng-model="g.language" ng-options="l.name for l in languages track by l.code"></select>
 	<br />
 	<select ng-model="m.count" ng-options="item for item in [2,4,6,8,10,12,16,20,24,30,36,42]"></select>{{text('pairs');}}
@@ -37,7 +38,7 @@
 	
   </div>
 	<div ng-show="m.isactive=='memory'" id="memory" ng-cloak>
-	  <button ng-click="m.mainMenu()">{{text('back')}}</button>
+	  <button ng-click="m.mainMenu()"><img src="img/elephant.png" alt="elephant"/><img src="img/homepage.png" alt ="home"></img></button>
 	  <br />
 	   <button ng-repeat="card in game.cards track by $index" style="{{m.getCardsize()}}" ng-class="'card_'+card.class" ng-disabled="card.class!='hidden'" ng-click="game.turn($index)">
 		<img src="img/{{card['value']}}" class = "cardtext" style="{{m.getCardsize()}}"/>

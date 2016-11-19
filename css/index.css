@@ -9,7 +9,7 @@ html, body {
 	margin: 0;
 }
 #icon {
-	height: 30vh;
+	height: 20vh;
 	text-align: center;
 }
 #wrapper {
@@ -26,8 +26,8 @@ button {
 	min-width: 8vw;
 }
 
-#title {
-    font-size:8vh;
+h1{
+    font-size:6vh;
     font-weight:normal;
     margin:5px;
     overflow:visible;
@@ -80,6 +80,9 @@ h2 {
     position:fixed;
     bottom:0;
 	font-size:8pt;
+}
+button img {
+	width:5vh;
 }
 
 
