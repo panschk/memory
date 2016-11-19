@@ -7,29 +7,33 @@
     <script src="angular.min.js"></script>
 	<script src="timbre.js"></script>
 	<script src="data.js" charset="utf-8"></script>
-	<script src="elefantbrain.js" charset="utf-8"></script>
+	<script src="util.js" charset="utf-8"></script>
+	<script src="elephantbrain.js" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-  <title>Elefant Brain</title>
+  <title>Elephant Brain</title>
   </head>
   <body>
   
-
+<div id = "wrapper">
   <div id="menu" ng-show="m.isactive=='menu'" ng-cloak>
-		<select ng-model="g.language" ng-options="l.name for l in languages track by l.code"></select>
-		<br />
-		<select ng-model="m.count" ng-options="item for item in [2,4,6,8,10,12,16,20,24,30,36,42]"></select>{{text('pairs');}}
-		<button ng-click="m.startMemory()">{{text('play')}}</button>
+	<img src="img/elephant.png" id = "icon" ></img>
+	<span id="title">Elephant Brain</span>
+	<br />
+	<select ng-model="g.language" ng-options="l.name for l in languages track by l.code"></select>
+	<br />
+	<select ng-model="m.count" ng-options="item for item in [2,4,6,8,10,12,16,20,24,30,36,42]"></select>{{text('pairs');}}
+	<button ng-click="m.startMemory()">{{text('play')}}</button>
 
-		<div id = "highscorelist" >
-			<div><b>{{text('highscore');}}</b></div>
-			<div ng-repeat="(key, value) in g.highscoreList track by $index" class="highscore">
-			<b><u>{{key}} {{text('pairs')}}</u></b>
-				<span ng-repeat="val in value track by $index" >
-					<b>{{val.name}}</b>:  {{val.turns}}
-				</span>
-			</div>
-		
+	<div id = "highscorelist" >
+		<h2><b>{{text('highscore');}}</b></h2>
+		<div ng-repeat="(key, value) in g.highscoreList track by $index" class="highscore">
+		<b><u>{{key}} {{text('pairs')}}</u></b>
+			<span ng-repeat="val in value track by $index" >
+				<b>{{val.name}}</b>:  {{val.turns}}
+			</span>
 		</div>
+	
+	</div>
 	
   </div>
 	<div ng-show="m.isactive=='memory'" id="memory" ng-cloak>
@@ -42,6 +46,7 @@
 	
 	<div id="footer">
 	Most card images are designed by <a href="http://www.flaticon.com/authors/freepik" target="_blank">Freepik from Flaticon</a>
+	</div>
 	</div>
   </body>
 </html>
