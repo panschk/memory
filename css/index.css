@@ -72,7 +72,9 @@ h2 {
 .card_hidden .cardtext {
 	display:none;
 }
-
+.cardtext {
+	font-size: 12px;
+}
 .highscore {
 	font-size: 2vh;
 }
@@ -84,5 +86,12 @@ h2 {
 button img {
 	width:5vh;
 }
-
-
+#settings {
+	border: 1px solid white;
+}
+span.small {
+	font-size:2vh;
+}
+img.inline {
+	height: 2vh;
+}

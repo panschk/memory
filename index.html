@@ -19,21 +19,28 @@
 	<img src="img/elephant.png" id = "icon" ></img>
 	<h1>Elephant Brain</h1>
 	<br />
-	<button><img src="img/settings.png"/></button>
-	<select ng-model="g.language" ng-options="l.name for l in languages track by l.code"></select>
+	<button ng-click = "m.settings=!m.settings"><img src="img/settings.png"/></button>
 	<br />
+	<div id = "settings" ng-show="m.settings">
+		<select ng-model="g.language" ng-options="l.name for l in languages track by l.code"></select>
+		<br />
+		<input type="checkbox" name="sound" ng-model="g.sound">{{text('sound')}}</input>
+		<br />
+		<input type ="checkbox" name = "showDesc" ng-model="g.showDesc">{{text('showDesc')}}</input>
+	</div>
 	<select ng-model="m.count" ng-options="item for item in [2,4,6,8,10,12,16,20,24,30,36,42]"></select>{{text('pairs');}}
 	<button ng-click="m.startMemory()">{{text('play')}}</button>
 
 	<div id = "highscorelist" >
 		<h2><b>{{text('highscore');}}</b></h2>
+		<span class="small">{{text('top3')}}</span>
 		<div ng-repeat="(key, value) in g.highscoreList track by $index" class="highscore">
 		<b><u>{{key}} {{text('pairs')}}</u></b>
-			<span ng-repeat="val in value track by $index" >
-				<b>{{val.name}}</b>:  {{val.turns}}
-			</span>
-		</div>
-	
+			<img src="img/trophy.png" class="inline" ></img>
+				<b>1. {{value[0].name}}</b>({{value[0].turns}})
+				<b>2. </b> {{value[1].name}} ({{value[1].turns}})
+				<b>3. </b> {{value[2].name}} ({{value[2].turns}})			
+		</div>	
 	</div>
 	
   </div>
@@ -41,7 +48,8 @@
 	  <button ng-click="m.mainMenu()"><img src="img/elephant.png" alt="elephant"/><img src="img/homepage.png" alt ="home"></img></button>
 	  <br />
 	   <button ng-repeat="card in game.cards track by $index" style="{{m.getCardsize()}}" ng-class="'card_'+card.class" ng-disabled="card.class!='hidden'" ng-click="game.turn($index)">
-		<img src="img/{{card['value']}}" class = "cardtext" style="{{m.getCardsize()}}"/>
+		<img src="img/{{card['value'].path}}" style="width:100%" class = "cardtext"/>
+		<div class = "cardtext" >{{m.showText(card)}}</div>
 	   </button>
 	</div>
 	

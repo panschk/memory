@@ -12,10 +12,19 @@ app.controller('Main', ['$scope', function Main($scope) {
 		this.isactive = 'menu';
 	}
 	this.getCardsize = function() {
-		var height = window.innerHeight;
-		var width = window.innerWidth;
-		var value = Math.min(height, width) / (Math.log(this.count) * 3.0);
-		return "height:"+value+"px;width: "+value + "px;";
+		var windowheight = window.innerHeight;
+		var windowwidth = window.innerWidth;
+		var value = Math.min(windowheight, windowwidth) / (Math.log(this.count) * 3.0);
+		var height = value;
+		if (g.showDesc) {
+			height += 20;
+		}
+		return "height:"+height+"px;width: "+value + "px;";
+	}
+	this.showText = function(card) {
+		if (g.showDesc) {
+			return card.value[g.language.code];
+		}
 	}
 	
 	$scope.g=g;
@@ -59,7 +68,9 @@ var Memory = function(m) {
 			if (c1.index===c2.index) {
 				c1.class='done';
 				c2.class='done';
-				noise();
+				if (g.sound) {
+					noise();
+				}
 				this.checkAllTurned();
 			}
 		}
@@ -90,6 +101,7 @@ var load = function() {
 	if (!gs) {
 		gs = GlobalScope;
 	}
+	gs.sound=true;
 	return gs;
 }
 
