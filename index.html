@@ -18,15 +18,15 @@
   <div id="menu" ng-show="m.isactive=='menu'" ng-cloak>
 	<img src="img/elephant.png" id = "icon" ></img>
 	<h1>Elephant Brain</h1>
-	<br />
-	<button ng-click = "m.settings=!m.settings"><img src="img/settings.png"/></button>
-	<br />
+	<button ng-click = "m.settings=!m.settings" id = "settingsbutton" ><img src="img/settings.png"/></button>
 	<div id = "settings" ng-show="m.settings">
 		<select ng-model="g.language" ng-options="l.name for l in languages track by l.code"></select>
 		<br />
 		<input type="checkbox" name="sound" ng-model="g.sound">{{text('sound')}}</input>
 		<br />
 		<input type ="checkbox" name = "showDesc" ng-model="g.showDesc">{{text('showDesc')}}</input>
+		<br />
+		<button ng-click = "save(); m.settings=!m.settings">Ok</button>
 	</div>
 	<select ng-model="m.count" ng-options="item for item in [2,4,6,8,10,12,16,20,24,30,36,42]"></select>{{text('pairs');}}
 	<button ng-click="m.startMemory()">{{text('play')}}</button>

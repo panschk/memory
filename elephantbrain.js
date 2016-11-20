@@ -30,7 +30,9 @@ app.controller('Main', ['$scope', function Main($scope) {
 	$scope.g=g;
 	$scope.translate = translate;
 	$scope.languages = languages;
+	$scope.save = save;
 	$scope.text = text;
+	
 }]);
 
 var Memory = function(m) {
@@ -101,7 +103,6 @@ var load = function() {
 	if (!gs) {
 		gs = GlobalScope;
 	}
-	gs.sound=true;
 	return gs;
 }
 
