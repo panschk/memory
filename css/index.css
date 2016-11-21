@@ -2,6 +2,7 @@
 body {
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     background: #7c94ba;
+	color: #000033;
 }
 
 }
@@ -18,8 +19,15 @@ html, body {
 #menu {
     margin: auto;
 }
-div, input, button, select{
+div{
 	font-size: 3vh;
+}
+
+input, button, select {
+	font-size: 5vh;
+	border-radius:45px;
+	border:1px solid #AAAAAA;
+	color: #dd8800;
 }
 button {
 	min-height: 8vh;
@@ -42,6 +50,7 @@ h2 {
 }
 
 .card_shown, .card_hidden, .card_done {
+	border-radius:2px;
 	background-color:#dddddd;
 	border: 1px solid black;
 	margin: 5px;

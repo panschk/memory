@@ -148,8 +148,8 @@ var addToList = function(size, entry) {
 		if (!wasAdded) {
 			g.highscoreList[size].push(entry);
 		}
-		if (g.highscoreList[size].length > HIGHSCORE_SIZE) {
-			g.highscoreList[size].splice(0, HIGHSCORE_SIZE -1);
+		while (g.highscoreList[size].length > HIGHSCORE_SIZE) {
+			g.highscoreList[size].pop();
 		}
 	}
 	save();
