@@ -29,6 +29,16 @@ testHighscore = function() {
 	return 0;
 }
 
+testPics = function() {
+	var length = icons.length;
+	for (var i = 0; i < length; i++) {
+		var path = "img/" + icons[i].path;
+		var image = new Image();
+		image.src = path;
+	}
+	return 0;
+}
+
 save = function() {
 // do nothing
 }
